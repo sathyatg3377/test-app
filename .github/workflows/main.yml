@@ -1,0 +1,23 @@
+name: Debricked scan
+
+
+
+on: [push]
+
+
+
+jobs:
+
+  vulnerabilities-scan:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - uses: debricked/actions/skip-scan@v1 # Only use if you want to use skip scan
+
+      env:
+
+        DEBRICKED_TOKEN: ${{ secrets.DEBRICKED_TOKEN }}
